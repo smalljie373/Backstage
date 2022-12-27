@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六角餐廳-後台系統</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/all.css">
+</head>
+<body>
+    <div class="d-flex">
+        <aside class="sidebar vh-100 border-end d-flex flex-column bg-white pt-3">
+            <!--標題-->
+            <div class="px-4">
+                <strong>六角西餐廳</strong>
+                - 後台管理
+            </div>
+            <div class="overflow-auto mt-3">
+                <div>
+                    <a href="home.html" class="sidebar-link px-4">
+                        <i class="bi bi-house"></i> 首頁
+                    </a>
+                </div>
+                <div>
+                    <a href="#menu-order" class="sidebar-link" data-bs-toggle="collapse" >
+                        <div class="d-flex justify-content-between px-4">
+                            <div>
+                                <i class="bi bi-journal"></i> 訂單管理
+                            </div>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                    </a>
+                    <div class="collapse" id="menu-order">
+                        <div>
+                            <a href="orders.html" class="sidebar-link ps-5">
+                                <i class="bi bi-journal"></i>訂單列表
+                            </a>
+                            <a href="order.html" class="sidebar-link ps-5">
+                                <i class="bi bi-journal"></i>單一訂單細節
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="sidebar-link px-4">
+                        <i class="bi bi-link"></i> 參考連結
+                    </a>
+                </div>
+            </div>
+            <!--登出按鈕-->
+            <a href="#" class="mt-auto sidebar-link px-4">
+                <i class="bi bi-box-arrow-right"></i> 登出
+            </a>
+        </aside>
+        <main class="main">
+            <div class="bg-white w-100 border-bottom sticky-top">
+                <a href="#" class="d-inline-block py-3 px-4 border-end" id="toggle-btn">
+                <i class="bi bi-arrows-angle-expand"></i>
+            </a>
+            </div>
+            <!--主要內容-->
+            <div class="p-4">
+                <div class="row g-4 row-cols-lg-3 mb-4">
+                    <div class="col">
+                        <div class="card  shadow-sm">
+                            <div class="card-body text-end">
+                                <h2 class="display-6">在線人數</h2>
+                                <p class="display-4 mb-0">3,120</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card  shadow-sm">
+                            <div class="card-body  text-end">
+                                <h2 class="display-6">訂單數</h2>
+                                <p class="display-4 mb-0">1,058</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card  shadow-sm">
+                            <div class="card-body  text-end">
+                                <h2 class="display-6">營業額</h2>
+                                <p class="mb-0 text-success"><span class="fs-3">NT$</span><span class="display-4">203,842</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-2 mb-4">
+                    <div class="col-lg-4">
+                        <div class="card shadow-sm  h-100">
+                            <div class="card-body">
+                                <canvas id="pie-chart" class="img-fluid"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm  h-100">
+                            <div class="card-body">
+                                <canvas id="bar-chart" class="img-fluid"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <div class="input-group">
+                            <span class="input-group-text border-0 bg-transparent pe-0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="search" class="form-control border-0 shadow-none" placeholder="search...">
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="bg-light text-nowrap">
+                                    <tr class="align-middle table-warning">
+                                        <th scope="col" class="py-3 ps-4">訂單編號</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">用戶名稱</th>
+                                        <th scope="col">購買品項</th>
+                                        <th scope="col">付款狀態</th>
+                                        <th scope="col">購買金額</th>
+                                        <th scope="col" class="pe-4">編輯</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-nowrap">
+                                    <tr>
+                                        <td scope="row" class="ps-4">TX123403619</td>
+                                        <td>ab1234@gmail.com</td>
+                                        <td>卡小伯</td>
+                                        <td>六角西餐廳：大麥克全餐</td>
+                                        <td><div class="text-danger">尚未付款</div></td>
+                                        <td class="text-end">900</td>
+                                        <td class="text-end pe-4"><a href="#" class="btn btn-sm btn-outline-dark me-2">編輯<i class="bi bi-pen"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" class="ps-4">TX123456789</td>
+                                        <td>ab1234@gmail.com</td>
+                                        <td>卡小伯</td>
+                                        <td>六角西餐廳：大麥克全餐</td>
+                                        <td><div class="text-danger">尚未付款</div></td>
+                                        <td class="text-end">900</td>
+                                        <td class="text-end pe-4"><a href="#" class="btn btn-sm btn-outline-dark me-2">編輯<i class="bi bi-pen"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" class="ps-4">TX123439563</td>
+                                        <td>ab1234@gmail.com</td>
+                                        <td>卡小伯</td>
+                                        <td>六角西餐廳：大麥克全餐</td>
+                                        <td><div class="text-danger">尚未付款</div></td>
+                                        <td class="text-end">900</td>
+                                        <td class="text-end pe-4"><a href="#" class="btn btn-sm btn-outline-dark me-2">編輯<i class="bi bi-pen"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row" class="ps-4">TX123474249</td>
+                                        <td>ab1234@gmail.com</td>
+                                        <td>卡小伯</td>
+                                        <td>六角西餐廳：大麥克全餐</td>
+                                        <td><div class="text-danger">尚未付款</div></td>
+                                        <td class="text-end">900</td>
+                                        <td class="text-end pe-4"><a href="#" class="btn btn-sm btn-outline-dark me-2">編輯<i class="bi bi-pen"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent py-3">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-end mb-0">
+                            <li class="page-item"><a class="page-link disabled" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            
+        </main>
+        
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/javascripts/home.js"></script>
+    <script src="/javascripts/all.js"></script>
+</body>
+</html>
